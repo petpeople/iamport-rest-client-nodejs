@@ -391,6 +391,7 @@ class Iamport {
     readonly certification: Certifications;
     readonly vbank: Vbank;
     readonly escrows: Escrows;
+    readonly receipts: Receipts;
     constructor(options?: {
         impKey: string
         impSecret: string
