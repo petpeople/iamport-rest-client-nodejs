@@ -173,6 +173,18 @@ interface EscrowLogis {
     sent_at: number,
 }
 
+interface IamportReceipt {
+    imp_uid: string
+    receipt_tid?: string
+    apply_num: string
+    type: string
+    amount: number
+    vat: number
+    receipt_url?: string
+    applied_at: number
+    cancelled_at?: number
+}
+
 class Payments {
     getByImpUid(params:{imp_uid: string[]}): Promise<IamportResponse<IamportPayment[]>>
 
@@ -357,6 +369,19 @@ class Escrows {
         receiver: EscrowsLogisSenderAndReceiver
         logis: EscrowLogis
     }): Promise<IamportResponse<IamportPayment>>
+}
+
+class Receipts {
+    getByImpUid(params:{imp_uid: string[]}): Promise<IamportResponse<IamportReceipt[]>>
+
+    create(params:{
+        imp_uid: string
+        identifier: string
+    }): Promise<IamportResponse<IamportReceipt>>
+
+    delete(params:{
+        imp_uid: string
+    }): Promise<IamportResponse<IamportReceipt>>
 }
 
 class Iamport {

@@ -1,6 +1,6 @@
 {
   "name": "iamport",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "REST API client for I'amport;",
   "main": "index.js",
   "scripts": {
